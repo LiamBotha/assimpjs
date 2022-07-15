@@ -14,7 +14,11 @@ static const aiScene* ImportFileListByMainFile (Assimp::Importer& importer, cons
 		const aiScene* scene = importer.ReadFile (file.path,
 			aiProcess_Triangulate |
 			aiProcess_GenUVCoords |
+			aiProcess_GenNormals |
 			aiProcess_JoinIdenticalVertices |
+			aiProcess_MakeLeftHanded |
+			aiProcess_CalcTangentSpace |
+			aiProcess_OptimiseMeshes |
 			aiProcess_SortByPType);
 		return scene;
 	} catch (...) {
